@@ -8,6 +8,7 @@ import android.widget.TextView
 import android.support.v4.app.Fragment
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProvider
+import android.widget.ImageButton
 import com.benr.smack.R
 
 class HomeFragment : Fragment() {
@@ -22,10 +23,12 @@ class HomeFragment : Fragment() {
         homeViewModel =
                 ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(HomeViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_home, container, false)
-        val textView: TextView = root.findViewById(R.id.text_home)
+        val textView: TextView = root.findViewById(R.id.mainChannelName)
         homeViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
+        val sendMessageBtn = root.findViewById<ImageButton>(R.id.sendMessageBtn)
+        sendMessageBtn.setOnClickListener {  }
         return root
     }
 }

@@ -13,6 +13,7 @@ import androidx.navigation.ui.setupWithNavController
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
+import android.view.View
 
 class MainActivity : AppCompatActivity() {
 
@@ -38,5 +39,13 @@ class MainActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
+    fun loginBtnNavClicked(view: View) {
+
+    }
+
+    fun addChannelBtnClicked(view: View) {
+
     }
 }
